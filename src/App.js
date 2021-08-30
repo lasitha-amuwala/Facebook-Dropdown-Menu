@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
 import { ReactComponent as BellIcon } from './icons/bell.svg';
 import { ReactComponent as BoltIcon } from './icons/bolt.svg';
@@ -11,10 +11,34 @@ import { ReactComponent as PlusIcon } from './icons/plus.svg';
 const App = () => {
   return (
     <Navbar>
-      <NavItem icon={<PlusIcon/>} />
-      <NavItem icon={<BellIcon/>} />
-      <NavItem icon={<MessengerIcon/>}/>
+      <NavItem icon={<PlusIcon />} />
+      <NavItem icon={<BellIcon />} />
+      <NavItem icon={<MessengerIcon />} />
+      <NavItem icon={<CaretIcon />}>
+        <DropdownMenu />
+      </NavItem>
     </Navbar>
+  );
+};
+
+const DropdownMenu = () => {
+    
+  const DropdownItem = ({ children, leftIcon, rightIcon }) => (
+    <a href="#" className="menu-item">
+      <span className="icon-button">{leftIcon}</span>
+      {children}
+      <span className="icon-right">{rightIcon}</span>
+    </a>
+  );
+
+  return (
+    <div className="dropdown">
+      <DropdownItem>My Profile</DropdownItem>
+      <DropdownItem
+        leftIcon={<CogIcon />}
+        rightIcon={<ChevronIcon />}
+      ></DropdownItem>
+    </div>
   );
 };
 
@@ -26,12 +50,17 @@ const Navbar = ({ children }) => {
   );
 };
 
-const NavItem = ({ icon }) => {
+const NavItem = ({ icon, children }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpenClose = () => setOpen(!open);
+
   return (
     <li className="nav-irem">
-      <a href="#" className="icon-button">
+      <a href="#" className="icon-button" onClick={handleOpenClose}>
         {icon}
       </a>
+      {open && children}
     </li>
   );
 };
