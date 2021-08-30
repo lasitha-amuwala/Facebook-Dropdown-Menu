@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { BsFillPersonFill } from "react-icons/bs";
 
 import { ReactComponent as ArrowIcon } from '../icons/arrow.svg';
 import { ReactComponent as ChevronIcon } from '../icons/chevron.svg';
@@ -11,6 +12,20 @@ export const DropdownMenu = () => {
   const [menuHeight, setMenuHeight] = useState(null);
 
   const dropdownRef = useRef(null);
+
+  // from https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json
+  const foodIcons = {
+    hamburger: '🍔',
+    pizza: '🍕',
+    chicken: '🍗',
+    bread: '🍞',
+    fries: '🍟',
+    icecream: '🍦',
+    doughnut: '🍩',
+    cookie: '🍪',
+    cake: '🍰',
+    popcorn: '🍿',
+  };
 
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
@@ -43,7 +58,14 @@ export const DropdownMenu = () => {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem>My Profile</DropdownItem>
+          <DropdownItem leftIcon={<BsFillPersonFill />}>My Profile</DropdownItem>
+          <DropdownItem
+            leftIcon={foodIcons['pizza']}
+            rightIcon={<ChevronIcon />}
+            goToMenu="food"
+          >
+            Foods
+          </DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
@@ -63,7 +85,7 @@ export const DropdownMenu = () => {
       >
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>My Tutorial</h2>
+            <h2>Settings</h2>
           </DropdownItem>
           <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
           <DropdownItem>CSS</DropdownItem>
@@ -71,7 +93,7 @@ export const DropdownMenu = () => {
       </CSSTransition>
 
       <CSSTransition
-        in={activeMenu === 'settings'}
+        in={activeMenu === 'food'}
         timeout={500}
         classNames="menu-secondary"
         unmountOnExit
@@ -79,10 +101,13 @@ export const DropdownMenu = () => {
       >
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>My Tutorial</h2>
+            <h2>Foods</h2>
           </DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
-          <DropdownItem>CSS</DropdownItem>
+          {Object.keys(foodIcons).map((food) => (
+            <DropdownItem leftIcon={foodIcons[food]}>
+              {food.split('_').join(' ')}
+            </DropdownItem>
+          ))}
         </div>
       </CSSTransition>
     </div>
