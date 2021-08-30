@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Facebook-Dropdown-Menu/static/css/main.b2efb858.chunk.css",
+    "main.js": "/Facebook-Dropdown-Menu/static/js/main.7350b3a3.chunk.js",
+    "main.js.map": "/Facebook-Dropdown-Menu/static/js/main.7350b3a3.chunk.js.map",
+    "runtime-main.js": "/Facebook-Dropdown-Menu/static/js/runtime-main.2ef77ced.js",
+    "runtime-main.js.map": "/Facebook-Dropdown-Menu/static/js/runtime-main.2ef77ced.js.map",
+    "static/js/2.8b36ebab.chunk.js": "/Facebook-Dropdown-Menu/static/js/2.8b36ebab.chunk.js",
+    "static/js/2.8b36ebab.chunk.js.map": "/Facebook-Dropdown-Menu/static/js/2.8b36ebab.chunk.js.map",
+    "index.html": "/Facebook-Dropdown-Menu/index.html",
+    "static/css/main.b2efb858.chunk.css.map": "/Facebook-Dropdown-Menu/static/css/main.b2efb858.chunk.css.map",
+    "static/js/2.8b36ebab.chunk.js.LICENSE.txt": "/Facebook-Dropdown-Menu/static/js/2.8b36ebab.chunk.js.LICENSE.txt",
+    "static/media/arrow.2e552680.svg": "/Facebook-Dropdown-Menu/static/media/arrow.2e552680.svg",
+    "static/media/bell.f0c76da2.svg": "/Facebook-Dropdown-Menu/static/media/bell.f0c76da2.svg",
+    "static/media/bolt.bbfd3d7a.svg": "/Facebook-Dropdown-Menu/static/media/bolt.bbfd3d7a.svg",
+    "static/media/caret.17f0a4fb.svg": "/Facebook-Dropdown-Menu/static/media/caret.17f0a4fb.svg",
+    "static/media/chevron.52254b8e.svg": "/Facebook-Dropdown-Menu/static/media/chevron.52254b8e.svg",
+    "static/media/cog.8c5b9138.svg": "/Facebook-Dropdown-Menu/static/media/cog.8c5b9138.svg",
+    "static/media/messenger.39261066.svg": "/Facebook-Dropdown-Menu/static/media/messenger.39261066.svg",
+    "static/media/plus.d5a88a59.svg": "/Facebook-Dropdown-Menu/static/media/plus.d5a88a59.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ef77ced.js",
+    "static/js/2.8b36ebab.chunk.js",
+    "static/css/main.b2efb858.chunk.css",
+    "static/js/main.7350b3a3.chunk.js"
+  ]
+}
