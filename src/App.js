@@ -5,8 +5,8 @@ import { ReactComponent as CaretIcon } from './icons/caret.svg';
 import { ReactComponent as MessengerIcon } from './icons/messenger.svg';
 import { ReactComponent as PlusIcon } from './icons/plus.svg';
 
-import { NavItem } from './Components/NavItem';
-import { DropdownMenu } from './Components/DropdownMenu';
+import { NavItem } from './components/NavItem';
+import { DropdownMenu } from './components/DropdownMenu';
 
 const App = () => (
     <nav className="navbar">
