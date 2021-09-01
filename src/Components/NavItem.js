@@ -8,7 +8,7 @@ export const NavItem = ({ icon, children }) => {
     <li className="nav-item">
       <a
         href="#"
-        className={classNames('icon-button', { active: open && children })}
+        className={classNames('icon-button nav-button', { active: open && children })}
         onClick={() => setOpen(!open)}
       >
         {icon}

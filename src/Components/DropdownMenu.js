@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { BsFillPersonFill } from "react-icons/bs";
+import { FaLock } from "react-icons/fa"
 
 import { ReactComponent as ArrowIcon } from '../icons/arrow.svg';
 import { ReactComponent as ChevronIcon } from '../icons/chevron.svg';
@@ -42,7 +43,7 @@ export const DropdownMenu = () => {
       className="menu-item"
       onClick={() => goToMenu && setActiveMenu(goToMenu)}
     >
-      <span className="icon-button">{leftIcon}</span>
+      <span className="icon-button menu-button">{leftIcon}</span>
       {children}
       <span className="icon-right">{rightIcon}</span>
     </a>
@@ -64,14 +65,14 @@ export const DropdownMenu = () => {
             rightIcon={<ChevronIcon />}
             goToMenu="food"
           >
-            Foods
+            Food
           </DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
             goToMenu="settings"
           >
-            Settings
+            Settings & Privacy
           </DropdownItem>
         </div>
       </CSSTransition>
@@ -85,10 +86,10 @@ export const DropdownMenu = () => {
       >
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>Settings</h2>
+            <h2>Settings & Privacy</h2>
           </DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
-          <DropdownItem>CSS</DropdownItem>
+          <DropdownItem leftIcon={<CogIcon />}>Settings</DropdownItem>
+          <DropdownItem leftIcon={<FaLock />}>Privacy</DropdownItem>
         </div>
       </CSSTransition>
 
@@ -101,7 +102,7 @@ export const DropdownMenu = () => {
       >
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>Foods</h2>
+            <h2>Food</h2>
           </DropdownItem>
           {Object.keys(foodIcons).map((food) => (
             <DropdownItem leftIcon={foodIcons[food]}>
