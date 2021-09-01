@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { BsFillPersonFill } from "react-icons/bs";
-import { FaLock } from "react-icons/fa"
+import { BsFillPersonFill } from 'react-icons/bs';
+import { FaLock } from 'react-icons/fa';
 
 import { ReactComponent as ArrowIcon } from '../icons/arrow.svg';
 import { ReactComponent as ChevronIcon } from '../icons/chevron.svg';
@@ -26,6 +26,19 @@ export const DropdownMenu = () => {
     cookie: '🍪',
     cake: '🍰',
     popcorn: '🍿',
+  };
+
+  const AnimalIcons = {
+    snake: '🐍',
+    dog: '🐕',
+    pig: '🐖',
+    elephant: '🐘',
+    honeybee: '🐝',
+    turtle: '🐢',
+    baby_chick: '🐤',
+    bird: '🐦',
+    penguin: '🐧',
+    camel: '🐫',
   };
 
   useEffect(() => {
@@ -59,13 +72,22 @@ export const DropdownMenu = () => {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem leftIcon={<BsFillPersonFill />}>My Profile</DropdownItem>
+          <DropdownItem leftIcon={<BsFillPersonFill />}>
+            My Profile
+          </DropdownItem>
           <DropdownItem
             leftIcon={foodIcons['pizza']}
             rightIcon={<ChevronIcon />}
             goToMenu="food"
           >
             Food
+          </DropdownItem>
+          <DropdownItem
+            leftIcon={AnimalIcons['snake']}
+            rightIcon={<ChevronIcon />}
+            goToMenu="animals"
+          >
+            Animals
           </DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
@@ -107,6 +129,25 @@ export const DropdownMenu = () => {
           {Object.keys(foodIcons).map((food) => (
             <DropdownItem leftIcon={foodIcons[food]}>
               {food.split('_').join(' ')}
+            </DropdownItem>
+          ))}
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === 'animals'}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}
+      >
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>Animals</h2>
+          </DropdownItem>
+          {Object.keys(AnimalIcons).map((animal) => (
+            <DropdownItem leftIcon={AnimalIcons[animal]}>
+              {animal.split('_').join(' ')}
             </DropdownItem>
           ))}
         </div>

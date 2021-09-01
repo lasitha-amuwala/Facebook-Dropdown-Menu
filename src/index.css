@@ -127,6 +127,7 @@ a {
   transition: background 250ms;
   padding: 0px 8px;
   width: 284px;
+  text-transform: capitalize;
 }
 
 .menu-item .icon-button:hover {
